@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric’s Pest Control | Free Inspection</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    line-height: 1.6;
+    color: #333;
+}
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+header h1 {
+    font-size: 3rem;
+}
+header p {
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background: #22c55e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+section {
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: auto;
+}
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+.card {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+form {
+    display: grid;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+}
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    padding: 12px;
+    background: #1e3a8a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Eric’s Pest Control</h1>
+    <p>Fast • Reliable • Affordable Pest Solutions</p>
+    <a href="tel:5623043473" class="btn">Call Now</a>
+    <a href="#inspection" class="btn">Free Inspection</a>
+</header>
+
+<section>
+    <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
+    <div class="services">
+        <div class="card">
+            <h3>General Pest Control</h3>
+            <p>Ants, spiders, roaches, earwigs & more.</p>
+        </div>
+        <div class="card">
+            <h3>Rodent Control</h3>
+            <p>Rats, mice, trapping & exclusion services.</p>
+        </div>
+        <div class="card">
+            <h3>Termite Inspections</h3>
+            <p>Protect your home from costly damage.</p>
+        </div>
+        <div class="card">
+            <h3>Commercial Service</h3>
+            <p>Hotels, apartments, restaurants & offices.</p>
+        </div>
+    </div>
+</section>
+
+<section id="inspection">
+    <h2 style="text-align:center; margin-bottom:20px;">Request a Free Inspection</h2>
+    <form action="https://formsubmit.co/ericspest@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+        <input type="email" name="email" placeholder="Email Address">
+        <textarea name="message" rows="5" placeholder="What pest problem are you having?"></textarea>
+        <button type="submit">Submit Request</button>
+    </form>
+</section>
+
+<footer>
+    <p>© 2026 Eric’s Pest Control | Licensed & Insured</p>
+</footer>
+
+</body>
+</html>
