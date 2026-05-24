@@ -11,6 +11,10 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+/* Smooth scrolling transition */
+html {
+    scroll-behavior: smooth;
+}
 body {
     line-height: 1.6;
     color: #1e293b;
@@ -255,7 +259,7 @@ footer {
     <div class="btn-group">
         <a href="tel:+15623043473" class="btn">Call Now</a>
         <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
-        <!-- UPDATED HEADER BUTTON: Direct anchor drop to the Client Hub section -->
+        <!-- LINK REPAIRED: This now triggers the immediate scrolling down to the customer panel -->
         <a href="#portal" class="btn btn-alt">🔒 Client Account Hub</a>
     </div>
 </header>
@@ -318,7 +322,7 @@ footer {
     </div>
 </section>
 
-<!-- NEW SECTION: Dedicated Client Account Hub Placement -->
+<!-- CLIENT ACCOUNT HUB SECTION -->
 <section id="portal" style="padding: 40px 20px; max-width: 1100px; margin: auto;">
     <div class="portal-section">
         <h2 class="section-title" style="text-align: left; font-size: 2rem;">Client Account Hub</h2>
