@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric’s Pest Control | Master Hub</title>
+
+<!-- IPHONE HOME SCREEN ICON (Green Shield Checklist) -->
+<link rel="apple-touch-icon" href="https://img.icons8.com/fluent/180/000000/checked-checkbox.png">
+
+<style>
+/* --- UNIVERSAL SYSTEM STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+body {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 15px;
+}
+.master-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* --- BRANDED HEADER --- */
+.header {
+    background: linear-gradient(135deg, #020617, #1e3a8a);
+    color: white;
+    padding: 20px 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+.header-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.logo-shield {
+    background: #22c55e;
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+.header-text h1 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+.header-text p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin-top: 2px;
+}
+
+/* --- INTERACTIVE TABS --- */
+.tab-navigation {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.tab-btn {
+    flex: 1;
+    padding: 14px;
+    background: #e2e8f0;
+    color: #475569;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+.tab-btn.active {
+    background: #1e3a8a;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
+}
+.view-content {
+    display: none; /* Controlled by JavaScript switcher */
+}
+.view-content.active-view {
+    display: block;
+}
+
+/* --- ROUTE VIEW STYLES --- */
+.day-section {
+    margin-bottom: 25px;
+}
+.day-header {
+    background: #334155;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.route-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.job-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+    position: relative;
+}
+.stop-number {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: #e2e8f0;
+    color: #475569;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+.time-slot {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #2563eb;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+.customer-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+.service-type {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 12px;
+}
+.address-text {
+    font-size: 0.9rem;
+    color: #334155;
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #f1f5f9;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+.btn-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #10b981;
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+.btn-nav:hover { background: #059669; }
+
+/* --- LEDGER VIEW STYLES --- */
+.ledger-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    border: 1px solid #e2e8f0;
+}
+.ledger-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+.ledger-actions h2 {
+    font-size: 1.1rem;
+    color: #1e3a8a;
+}
+.btn-print {
+    background: #1e3a8a;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.btn-print:hover { background: #1d4ed8; }
+.table-responsive {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.82rem;
+}
+th {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 12px 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #cbd5e1;
+    white-space: nowrap;
+}
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+tr:hover td { background-color: #f8fafc; }
+.badge-stamp {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #ef4444;
+    color: white;
+    font-weight: bold;
+    font-size: 0.7rem;
+    border-radius: 4px;
+}
+
+/* --- PRINT RULES (Isolates pure ledger log on paper) --- */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+        padding: 0;
+    }
+    .header, .tab-navigation, .ledger-actions, #routeView {
+        display: none !important; /* Hide map tools and headers */
+    }
+    #ledgerView {
+        display: block !important; /* Force log print visible */
+    }
+    .ledger-card {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+    }
+    th {
+        background-color: #e2e8f0 !important;
+        color: black;
+        border-bottom: 2px solid black;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    td { border-bottom: 1px solid #94a3b8; }
+    .badge-stamp {
+        border: 1px solid black;
+        color: black;
+        background: none !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="master-container">
+
+    <!-- MASTER BRANDED HEADER -->
+    <div class="header">
+        <div class="header-brand">
+            <div class="logo-shield">🛡️</div>
+            <div class="header-text">
+                <h1>ERIC'S PEST CONTROL & DEFENSE</h1>
+                <p>Operations Mobile Command • Operations Dashboard</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- HUB NAVIGATION TABS -->
+    <div class="tab-navigation">
+        <button class="tab-btn active" onclick="switchTab('routeView', this)">🗺️ Active Routes</button>
+        <button class="tab-btn" onclick="switchTab('ledgerView', this)">📋 Chemical Ledger</button>
+    </div>
+
+    <!-- =============================================
+         SECTION 1: DISPATCH SCHEDULE & GPS ROUTING
+         ============================================= -->
+    <div id="routeView" class="view-content active-view">
+        
+        <!-- MONDAY ROUTE -->
+        <div class="day-section">
+            <div class="day-header">Monday Route</div>
+            <div class="route-list">
+                <div class="job-card">
+                    <div class="stop-number">1</div>
+                    <div class="time-slot">08:00 AM</div>
+                    <div class="customer-name">John Doe (Residential)</div>
+                    <div class="service-type">Perimeter Spray + De-webbing</div>
+                    <div class="address-text">123 Magnolia Ave, La Habra, CA 90631</div>
+                    <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=123+Magnolia+Ave+La+Habra+CA+90631" target="_blank">📍 Navigate to Stop 1</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TUESDAY ROUTE -->
+        <div class="day-section">
+            <div class="day-header">Tuesday Route</div>
+            <div class="route-list">
+                <div class="job-card">
+                    <div class="stop-number">1</div>
+                    <div class="time-slot">10:00 AM</div>
+                    <div class="customer-name">Whittier Plaza (Commercial)</div>
+                    <div class="service-type">Exterior Bait Station Service</div>
+                    <div class="address-text">456 Whittier Blvd, Whittier, CA 90601</div>
+                    <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=456+Whittier+Blvd+Whittier+CA+90601" target="_blank">📍 Navigate to Stop 1</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- WEDNESDAY ROUTE -->
+        <div class="day-section">
+            <div class="day-header">Wednesday Route</div>
+            <div class="route-list">
+                <div style="background: #e2e8f0; color: #475569; padding: 15px; border-radius: 8px; font-size: 0.9rem; text-align: center; font-style: italic;">
+                    No stops loaded yet for Wednesday. Tap edit in GitHub to add them!
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- =============================================
+         SECTION 2: OFFICIAL PESTICIDE APPLICATION LOG
+         ============================================= -->
+    <div id="ledgerView" class="view-content">
+        <div class="ledger-card">
+            
+            <div class="ledger-actions">
+                <h2>3CCR Section 6624 Activity Log</h2>
+                <button class="btn-print" onclick="window.print()">🖨️ Print Log Ledger</button>
+            </div>
+
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date / Time</th>
+                            <th>Customer Location / Site</th>
+                            <th>Product Name</th>
+                            <th>EPA Reg. No.</th>
+                            <th>Undiluted Vol.</th>
+                            <th>Mix Rate</th>
+                            <th>Target Pest</th>
+                            <th>Applicator</th>
+                            <th>SPCB Stamp Verification</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- SAMPLE RECORD 1 -->
+                        <tr>
+                            <td>May 24, 2026<br><small>09:15 AM</small></td>
+                            <td>123 Magnolia Ave,<br>La Habra, CA 90631</td>
+                            <td>Bifen IT</td>
+                            <td>53883-118</td>
+                            <td>1.0 fl oz</td>
+                            <td>0.06% / Gal</td>
+                            <td>Argentine Ants</td>
+                            <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
+                            <td><span class="badge-stamp">Attach Stamp #</span></td>
+                        </tr>
+                        
+                        <!-- SAMPLE RECORD 2 -->
+                        <tr>
+                            <td>May 24, 2026<br><small>11:00 AM</small></td>
+                            <td>456 Whittier Blvd,<br>Whittier, CA 90601</td>
+                            <td>Taurus SC</td>
+                            <td>53883-279</td>
+                            <td>0.8 fl oz</td>
+                            <td>0.06% / Gal</td>
+                            <td>Spiders, Roaches</td>
+                            <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
+                            <td><span class="badge-stamp">Attach Stamp #</span></td>
+                        </tr>
+                        
+                        <!-- NEW LOG RECORDS GO IN RIGHT ABOVE HERE VIA GITHUB EDIT -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- TAB SWITCHING LOGIC MECHANISM -->
+<script>
+function switchTab(viewId, element) {
+    // Hide all view views
+    document.querySelectorAll('.view-content').forEach(view => {
+        view.classList.remove('active-view');
+    });
+    // Remove active styles from buttons
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Show chosen view and set target button colors active
+    document.getElementById(viewId).classList.add('active-view');
+    element.classList.add('active');
+}
+</script>
+
+</body>
+</html>
