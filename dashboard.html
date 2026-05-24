@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eric’s Pest Control | Master Hub</title>
 
-<!-- IPHONE HOME SCREEN ICON (Green Shield Checklist) -->
+<!-- IPHONE HOME SCREEN ICON -->
 <link rel="apple-touch-icon" href="https://img.icons8.com/fluent/180/000000/checked-checkbox.png">
 
 <style>
@@ -22,7 +22,7 @@ body {
     padding: 15px;
 }
 .master-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: auto;
 }
 
@@ -81,24 +81,20 @@ body {
     cursor: pointer;
     transition: all 0.2s;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 .tab-btn.active {
     background: #1e3a8a;
     color: white;
-    box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.2);
 }
 .view-content {
-    display: none; /* Controlled by JavaScript switcher */
+    display: none;
 }
 .view-content.active-view {
     display: block;
 }
 
 /* --- ROUTE VIEW STYLES --- */
-.day-section {
-    margin-bottom: 25px;
-}
+.day-section { margin-bottom: 25px; }
 .day-header {
     background: #334155;
     color: white;
@@ -107,15 +103,10 @@ body {
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
     margin-bottom: 10px;
     display: inline-block;
 }
-.route-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
+.route-list { display: flex; flex-direction: column; gap: 12px; }
 .job-card {
     background: white;
     border-radius: 12px;
@@ -126,63 +117,21 @@ body {
 }
 .stop-number {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    background: #e2e8f0;
-    color: #475569;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
+    top: 16px; right: 16px;
+    background: #e2e8f0; color: #475569;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.8rem; font-weight: 700;
 }
-.time-slot {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #2563eb;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 4px;
-}
-.customer-name {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 2px;
-}
-.service-type {
-    font-size: 0.85rem;
-    color: #64748b;
-    margin-bottom: 12px;
-}
-.address-text {
-    font-size: 0.9rem;
-    color: #334155;
-    background: #f8fafc;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #f1f5f9;
-    margin-bottom: 12px;
-    line-height: 1.4;
-}
+.time-slot { font-size: 0.8rem; font-weight: 700; color: #2563eb; margin-bottom: 4px; }
+.customer-name { font-size: 1.1rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+.service-type { font-size: 0.85rem; color: #64748b; margin-bottom: 12px; }
+.address-text { font-size: 0.9rem; color: #334155; background: #f8fafc; padding: 10px; border-radius: 6px; margin-bottom: 12px; }
 .btn-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    background: #10b981;
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    transition: background 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    background: #10b981; color: white; text-decoration: none;
+    padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.9rem;
 }
-.btn-nav:hover { background: #059669; }
 
 /* --- LEDGER VIEW STYLES --- */
 .ledger-card {
@@ -194,94 +143,78 @@ body {
 }
 .ledger-actions {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 12px;
     border-bottom: 2px solid #cbd5e1;
     padding-bottom: 15px;
     margin-bottom: 15px;
 }
-.ledger-actions h2 {
-    font-size: 1.1rem;
-    color: #1e3a8a;
+@media(min-width: 600px) {
+    .ledger-actions { flex-direction: row; justify-content: space-between; align-items: center; }
+}
+.ledger-actions h2 { font-size: 1.1rem; color: #1e3a8a; }
+.action-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn-field-input {
+    background: #22c55e; color: white; text-decoration: none;
+    padding: 10px 16px; border-radius: 6px; font-weight: bold; font-size: 0.85rem;
+    display: flex; align-items: center; gap: 6px;
 }
 .btn-print {
-    background: #1e3a8a;
-    color: white;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    background: #1e3a8a; color: white; padding: 10px 16px;
+    border: none; border-radius: 6px; font-weight: bold; font-size: 0.85rem;
+    cursor: pointer; display: flex; align-items: center; gap: 6px;
 }
-.btn-print:hover { background: #1d4ed8; }
-.table-responsive {
-    overflow-x: auto;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-    font-size: 0.82rem;
-}
-th {
-    background-color: #f1f5f9;
-    color: #1e293b;
-    padding: 12px 10px;
-    font-weight: bold;
-    border-bottom: 2px solid #cbd5e1;
-    white-space: nowrap;
-}
-td {
-    padding: 12px 10px;
-    border-bottom: 1px solid #e2e8f0;
-    color: #334155;
-}
+.table-responsive { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.82rem; }
+th { background-color: #f1f5f9; color: #1e293b; padding: 12px 10px; font-weight: bold; border-bottom: 2px solid #cbd5e1; }
+td { padding: 12px 10px; border-bottom: 1px solid #e2e8f0; color: #334155; vertical-align: top; }
 tr:hover td { background-color: #f8fafc; }
-.badge-stamp {
-    display: inline-block;
-    padding: 4px 8px;
-    background: #ef4444;
-    color: white;
-    font-weight: bold;
-    font-size: 0.7rem;
-    border-radius: 4px;
-}
+.badge-stamp { display: inline-block; padding: 4px 8px; background: #ef4444; color: white; font-weight: bold; font-size: 0.7rem; border-radius: 4px; }
+.notes-text { max-width: 220px; font-size: 0.78rem; color: #475569; line-height: 1.3; }
 
-/* --- PRINT RULES (Isolates pure ledger log on paper) --- */
+/* IN-SCREEN BUTTON FOR INDIVIDUAL CLIENT REPORT */
+.btn-client-print {
+    background: #f1f5f9; color: #1e3a8a; border: 1px solid #cbd5e1;
+    padding: 6px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold;
+    cursor: pointer; display: inline-flex; align-items: center; gap: 4px; margin-top: 5px;
+}
+.btn-client-print:hover { background: #e2e8f0; }
+
+/* --- LIVE DYNAMIC PRINT LAYOUT TARGETS --- */
+#receipt-print-wrapper { display: none; }
+
 @media print {
-    body {
-        background-color: white;
-        color: black;
-        padding: 0;
+    body.print-receipt-mode .master-container { display: none !important; }
+    body.print-receipt-mode #receipt-print-wrapper {
+        display: block !important;
+        background: white; color: black; padding: 30px; font-size: 1rem;
     }
-    .header, .tab-navigation, .ledger-actions, #routeView {
-        display: none !important; /* Hide map tools and headers */
+    .receipt-header {
+        border-bottom: 3px solid #1e3a8a; padding-bottom: 15px; margin-bottom: 25px;
+        display: flex; justify-content: space-between; align-items: center;
     }
-    #ledgerView {
-        display: block !important; /* Force log print visible */
+    .receipt-title { font-size: 1.6rem; font-weight: bold; color: #1e3a8a; text-transform: uppercase; }
+    .receipt-meta { text-align: right; font-size: 0.9rem; line-height: 1.4; }
+    .receipt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 25px; }
+    .receipt-section { border: 1px solid #cbd5e1; padding: 15px; border-radius: 8px; background: #f8fafc; }
+    .receipt-section h3 { font-size: 1.1rem; color: #1e3a8a; margin-bottom: 10px; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px; text-transform: uppercase; }
+    .receipt-line { margin-bottom: 8px; font-size: 0.95rem; line-height: 1.4; }
+    .receipt-line strong { color: #334155; }
+    .receipt-notes-box { border: 1px solid #cbd5e1; padding: 20px; border-radius: 8px; margin-top: 20px; background: #f8fafc; min-height: 120px; }
+    .receipt-notes-box h3 { font-size: 1.1rem; color: #1e3a8a; margin-bottom: 8px; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 4px;}
+    .receipt-footer { margin-top: 50px; text-align: center; font-size: 0.85rem; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 15px; }
+
+    body:not(.print-receipt-mode) .header, 
+    body:not(.print-receipt-mode) .tab-navigation, 
+    body:not(.print-receipt-mode) .ledger-actions, 
+    body:not(.print-receipt-mode) #routeView,
+    body:not(.print-receipt-mode) .btn-client-print {
+        display: none !important;
     }
-    .ledger-card {
-        box-shadow: none;
-        border: none;
-        padding: 0;
-    }
-    th {
-        background-color: #e2e8f0 !important;
-        color: black;
-        border-bottom: 2px solid black;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-    td { border-bottom: 1px solid #94a3b8; }
-    .badge-stamp {
-        border: 1px solid black;
-        color: black;
-        background: none !important;
-    }
+    body:not(.print-receipt-mode) #ledgerView { display: block !important; }
+    body:not(.print-receipt-mode) .ledger-card { box-shadow: none; border: none; padding: 0; }
+    body:not(.print-receipt-mode) th { background-color: #e2e8f0 !important; color: black; border-bottom: 2px solid black; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body:not(.print-receipt-mode) td { border-bottom: 1px solid #94a3b8; }
 }
 </style>
 </head>
@@ -289,29 +222,25 @@ tr:hover td { background-color: #f8fafc; }
 
 <div class="master-container">
 
-    <!-- MASTER BRANDED HEADER -->
+    <!-- HEADER -->
     <div class="header">
         <div class="header-brand">
             <div class="logo-shield">🛡️</div>
             <div class="header-text">
                 <h1>ERIC'S PEST CONTROL & DEFENSE</h1>
-                <p>Operations Mobile Command • Operations Dashboard</p>
+                <p>Operations Mobile Command • Dashboard</p>
             </div>
         </div>
     </div>
 
-    <!-- HUB NAVIGATION TABS -->
+    <!-- TABS -->
     <div class="tab-navigation">
         <button class="tab-btn active" onclick="switchTab('routeView', this)">🗺️ Active Routes</button>
         <button class="tab-btn" onclick="switchTab('ledgerView', this)">📋 Chemical Ledger</button>
     </div>
 
-    <!-- =============================================
-         SECTION 1: DISPATCH SCHEDULE & GPS ROUTING
-         ============================================= -->
+    <!-- SECTION 1: ROUTING -->
     <div id="routeView" class="view-content active-view">
-        
-        <!-- MONDAY ROUTE -->
         <div class="day-section">
             <div class="day-header">Monday Route</div>
             <div class="route-list">
@@ -325,8 +254,6 @@ tr:hover td { background-color: #f8fafc; }
                 </div>
             </div>
         </div>
-
-        <!-- TUESDAY ROUTE -->
         <div class="day-section">
             <div class="day-header">Tuesday Route</div>
             <div class="route-list">
@@ -340,74 +267,74 @@ tr:hover td { background-color: #f8fafc; }
                 </div>
             </div>
         </div>
-
-        <!-- WEDNESDAY ROUTE -->
-        <div class="day-section">
-            <div class="day-header">Wednesday Route</div>
-            <div class="route-list">
-                <div style="background: #e2e8f0; color: #475569; padding: 15px; border-radius: 8px; font-size: 0.9rem; text-align: center; font-style: italic;">
-                    No stops loaded yet for Wednesday. Tap edit in GitHub to add them!
-                </div>
-            </div>
-        </div>
-        
     </div>
 
-
-    <!-- =============================================
-         SECTION 2: OFFICIAL PESTICIDE APPLICATION LOG
-         ============================================= -->
+    <!-- SECTION 2: CHEMICAL LOG LEDGER -->
     <div id="ledgerView" class="view-content">
         <div class="ledger-card">
             
             <div class="ledger-actions">
-                <h2>3CCR Section 6624 Activity Log</h2>
-                <button class="btn-print" onclick="window.print()">🖨️ Print Log Ledger</button>
+                <h2>3CCR Section 6624 Activity Log Ledger</h2>
+                <div class="action-buttons">
+                    <a href="https://forms.google.com" target="_blank" class="btn-field-input">📝 Log Chemical Use (Field Input)</a>
+                    <button class="btn-print" onclick="printMasterLedger()">🖨️ Print Full Audit Log</button>
+                </div>
             </div>
 
             <div class="table-responsive">
                 <table>
                     <thead>
                         <tr>
-                            <th>Date / Time</th>
+                            <th>Date</th>
+                            <th>Time In / Out<br><small>(Duration)</small></th>
                             <th>Customer Location / Site</th>
-                            <th>Product Name</th>
-                            <th>EPA Reg. No.</th>
-                            <th>Undiluted Vol.</th>
-                            <th>Mix Rate</th>
+                            <th>Product Details<br><small>(Name / EPA / Vol / Mix)</small></th>
                             <th>Target Pest</th>
-                            <th>Applicator</th>
-                            <th>SPCB Stamp Verification</th>
+                            <th>Notes & Recommendations / Field Analysis</th>
+                            <th>Applicator Info / Stamp</th>
+                            <th>Customer PDF</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <!-- SAMPLE RECORD 1 -->
+                        
+                        <!-- SAMPLE WORK ENTRY 1 -->
                         <tr>
-                            <td>May 24, 2026<br><small>09:15 AM</small></td>
-                            <td>123 Magnolia Ave,<br>La Habra, CA 90631</td>
-                            <td>Bifen IT</td>
-                            <td>53883-118</td>
-                            <td>1.0 fl oz</td>
-                            <td>0.06% / Gal</td>
+                            <td>May 24, 2026</td>
+                            <td><strong>In:</strong> 09:15 AM<br><strong>Out:</strong> 09:45 AM<br><small style="color: #64748b;">(30 mins)</small></td>
+                            <td><strong>John Doe (Residential)</strong><br>123 Magnolia Ave,<br>La Habra, CA 90631</td>
+                            <td><strong>Bifen IT</strong><br>Reg: 53883-118<br>Vol: 1.0 fl oz<br>Rate: 0.06%/Gal</td>
                             <td>Argentine Ants</td>
-                            <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
-                            <td><span class="badge-stamp">Attach Stamp #</span></td>
+                            <td>
+                                <div class="notes-text">
+                                    • Cleared active foraging ant trail along southern brick structure foundation wall.<br>
+                                    • **Recommendation:** Please trim climbing ivy vines away from master bedroom window casing to break entry bridge.
+                                </div>
+                            </td>
+                            <td>E. Vasquez<br><small>Lic # OPR12345</small><br><span class="badge-stamp">Stamp #129481</span></td>
+                            <td>
+                                <button class="btn-client-print" onclick="printClientReceipt('May 24, 2026', '09:15 AM', '09:45 AM', 'John Doe (Residential)<br>123 Magnolia Ave, La Habra, CA 90631', 'Bifen IT (EPA Reg. No: 53883-118)', '1.0 fl oz (Mix Rate: 0.06% per Gal)', 'Argentine Ants', 'Cleared active foraging ant trail along southern brick structure foundation wall.<br><br><strong>Recommendation:</strong> Please trim climbing ivy vines away from master bedroom window casing to break entry bridge.', 'E. Vasquez (Lic # OPR12345)', 'Stamp #129481')">📄 Get PDF Ticket</button>
+                            </td>
                         </tr>
-                        
-                        <!-- SAMPLE RECORD 2 -->
+
+                        <!-- SAMPLE WORK ENTRY 2 -->
                         <tr>
-                            <td>May 24, 2026<br><small>11:00 AM</small></td>
-                            <td>456 Whittier Blvd,<br>Whittier, CA 90601</td>
-                            <td>Taurus SC</td>
-                            <td>53883-279</td>
-                            <td>0.8 fl oz</td>
-                            <td>0.06% / Gal</td>
-                            <td>Spiders, Roaches</td>
-                            <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
-                            <td><span class="badge-stamp">Attach Stamp #</span></td>
+                            <td>May 24, 2026</td>
+                            <td><strong>In:</strong> 11:00 AM<br><strong>Out:</strong> 11:40 AM<br><small style="color: #64748b;">(40 mins)</small></td>
+                            <td><strong>Whittier Plaza (Commercial)</strong><br>456 Whittier Blvd,<br>Whittier, CA 90601</td>
+                            <td><strong>Taurus SC</strong><br>Reg: 53883-279<br>Vol: 0.8 fl oz<br>Rate: 0.06%/Gal</td>
+                            <td>Spiders & Roaches</td>
+                            <td>
+                                <div class="notes-text">
+                                    • Serviced exterior bait stations 1 through 8. Replaced missing bait in station 4.<br>
+                                    • **Recommendation:** Noted standing dumpster area accumulation behind building. Sanitation cleanup recommended to prevent fly breeding.
+                                </div>
+                            </td>
+                            <td>E. Vasquez<br><small>Lic # OPR12345</small><br><span class="badge-stamp">Stamp #129482</span></td>
+                            <td>
+                                <button class="btn-client-print" onclick="printClientReceipt('May 24, 2026', '11:00 AM', '11:40 AM', 'Whittier Plaza (Commercial)<br>456 Whittier Blvd, Whittier, CA 90601', 'Taurus SC (EPA Reg. No: 53883-279)', '0.8 fl oz (Mix Rate: 0.06% per Gal)', 'Spiders & Roaches', 'Serviced exterior bait stations 1 through 8. Replaced missing bait in station 4.<br><br><strong>Recommendation:</strong> Noted standing dumpster area accumulation behind building. Sanitation cleanup recommended to prevent fly breeding.', 'E. Vasquez (Lic # OPR12345)', 'Stamp #129482')">📄 Get PDF Ticket</button>
+                            </td>
                         </tr>
-                        
-                        <!-- NEW LOG RECORDS GO IN RIGHT ABOVE HERE VIA GITHUB EDIT -->
+
                     </tbody>
                 </table>
             </div>
@@ -417,21 +344,90 @@ tr:hover td { background-color: #f8fafc; }
 
 </div>
 
-<!-- TAB SWITCHING LOGIC MECHANISM -->
+
+<!-- ==========================================================
+     INVISIBLE INDIVIDUAL RECEIPT LAYOUT TEMPLATE FOR PRINTING
+     ========================================================== -->
+<div id="receipt-print-wrapper">
+    <div class="receipt-header">
+        <div>
+            <h1 style="color: #1e3a8a; font-size: 1.8rem; font-weight: 800; letter-spacing: -1px;">ERIC'S PEST CONTROL & DEFENSE</h1>
+            <p style="font-size: 0.85rem; color: #475569; font-weight: bold; margin-top: 3px;">Official Structural Service Report & Compliance Notice</p>
+        </div>
+        <div class="receipt-meta">
+            <div><strong>Service Date:</strong> <span id="rcpt-date"></span></div>
+            <div><strong>Time-In:</strong> <span id="rcpt-in"></span> | <strong>Time-Out:</strong> <span id="rcpt-out"></span></div>
+        </div>
+    </div>
+
+    <div class="receipt-grid">
+        <div class="receipt-section">
+            <h3>📍 Customer & Location</h3>
+            <div class="receipt-line" id="rcpt-customer" style="line-height: 1.5; font-weight: 500;"></div>
+        </div>
+        <div class="receipt-section">
+            <h3>👷 Operational Licensing</h3>
+            <div class="receipt-line"><strong>Applicator Name:</strong> <span id="rcpt-operator"></span></div>
+            <div class="receipt-line"><strong>Official SPCB Stamp:</strong> <span id="rcpt-stamp" style="font-weight: bold; color: #b91c1c;"></span></div>
+        </div>
+    </div>
+
+    <div class="receipt-grid">
+        <div class="receipt-section" style="grid-column: span 2;">
+            <h3>🧪 Chemical Treatment Specifications (3CCR § 6624)</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div>
+                    <div class="receipt-line"><strong>Material Employed:</strong> <span id="rcpt-product"></span></div>
+                    <div class="receipt-line"><strong>Volume & Concentrated Mix:</strong> <span id="rcpt-volume"></span></div>
+                </div>
+                <div>
+                    <div class="receipt-line"><strong>Targeted Threat Pests:</strong> <span id="rcpt-pest"></span></div>
+                    <div class="receipt-line"><strong>Application Method:</strong> Exterior Structural Perimeter Defense Barrier</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="receipt-notes-box">
+        <h3>📝 Service Summary & Field Recommendations</h3>
+        <div id="rcpt-notes" style="line-height: 1.5; font-size: 0.95rem; color: #1e293b; white-space: pre-line;"></div>
+    </div>
+
+    <div class="receipt-footer">
+        <p>Thank you for choosing Eric's Pest Control & Defense. Your property is securely protected.</p>
+        <p style="font-size: 0.75rem; margin-top: 8px; opacity: 0.7;">This document serves as your official structural pest control treatment notification required by state regulatory compliance rules.</p>
+    </div>
+</div>
+
+
+<!-- RUNTIME SYSTEM SCRIPTS -->
 <script>
 function switchTab(viewId, element) {
-    // Hide all view views
-    document.querySelectorAll('.view-content').forEach(view => {
-        view.classList.remove('active-view');
-    });
-    // Remove active styles from buttons
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    
-    // Show chosen view and set target button colors active
+    document.querySelectorAll('.view-content').forEach(view => { view.classList.remove('active-view'); });
+    document.querySelectorAll('.tab-btn').forEach(btn => { btn.classList.remove('active'); });
     document.getElementById(viewId).classList.add('active-view');
     element.classList.add('active');
+}
+
+function printMasterLedger() {
+    document.body.classList.remove('print-receipt-mode');
+    window.print();
+}
+
+function printClientReceipt(date, timeIn, timeOut, customer, product, volume, pest, notes, operator, stamp) {
+    document.getElementById('rcpt-date').innerText = date;
+    document.getElementById('rcpt-in').innerText = timeIn;
+    document.getElementById('rcpt-out').innerText = timeOut;
+    document.getElementById('rcpt-customer').innerHTML = customer;
+    document.getElementById('rcpt-product').innerText = product;
+    document.getElementById('rcpt-volume').innerText = volume;
+    document.getElementById('rcpt-pest').innerText = pest;
+    document.getElementById('rcpt-notes').innerHTML = notes;
+    document.getElementById('rcpt-operator').innerText = operator;
+    document.getElementById('rcpt-stamp').innerText = stamp;
+
+    document.body.classList.add('print-receipt-mode');
+    window.print();
 }
 </script>
 
