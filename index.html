@@ -423,9 +423,14 @@ footer {
         <h2 class="section-title">Request a Free Inspection</h2>
         <p class="section-subtitle">Drop your details below and we will reach out to schedule your property walkthrough</p>
         
-        <form action="https://api.web3forms.com/submit/3f429bf7-8bd4-45c2-99d8-8770088a21a1" method="POST">
+                        <!-- UPDATED FORM SUBMISSION WRAPPER -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Your verified access key is now safely placed below -->
+            <input type="hidden" name="access_key" value="50b69109-7754-469b-8bc6-9cc3a94833db">
+            
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="tel" name="phone" placeholder="Phone Number" required>
+
             <input type="email" name="email" placeholder="Email Address">
             
             <div class="form-row">
