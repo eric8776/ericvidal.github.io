@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eric’s Pest Control | Free Inspection</title>
+<title>Eric’s Pest Control | Premium Residential & Commercial Defense</title>
 <style>
 * {
     margin: 0;
@@ -13,74 +13,170 @@
 }
 body {
     line-height: 1.6;
-    color: #333;
+    color: #1e293b;
+    background-color: #f1f5f9;
 }
 header {
-    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    background: linear-gradient(135deg, #020617, #1e3a8a);
     color: white;
     text-align: center;
-    padding: 80px 20px;
+    padding: 90px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 4px solid #22c55e;
 }
 header h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
+    letter-spacing: -0.5px;
+    margin-bottom: 5px;
 }
 header p {
-    margin: 15px 0;
-    font-size: 1.2rem;
+    margin: 15px 0 25px 0;
+    font-size: 1.25rem;
+    color: #cbd5e1;
+}
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 650px;
 }
 .btn {
     display: inline-block;
-    padding: 12px 25px;
+    padding: 14px 28px;
     background: #22c55e;
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: bold;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.2);
+}
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(34, 197, 94, 0.3);
+    background: #16a34a;
+}
+.btn-alt {
+    background: #0f172a;
+    border: 2px solid #22c55e;
+}
+.btn-alt:hover {
+    background: #1e293b;
+    border-color: #16a34a;
 }
 section {
-    padding: 60px 20px;
+    padding: 80px 20px;
     max-width: 1100px;
     margin: auto;
 }
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+.section-subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
 .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
 }
 .card {
-    background: #f8fafc;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.04);
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+    border-color: #cbd5e1;
+}
+.card h3 {
+    color: #0f172a;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+.card p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+.trust-banner {
+    background: #0f172a;
+    color: #f8fafc;
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+.trust-item h4 {
+    color: #22c55e;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+.trust-item p {
+    color: #94a3b8;
+    font-size: 0.9rem;
 }
 form {
     display: grid;
-    gap: 15px;
+    gap: 16px;
     max-width: 600px;
     margin: auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.04);
+    border: 1px solid #e2e8f0;
 }
 input, textarea {
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: #f8fafc;
+    font-size: 1rem;
+    transition: all 0.2s ease;
 }
-button {
-    padding: 12px;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #1e3a8a;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+form button {
+    padding: 14px;
     background: #1e3a8a;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+}
+form button:hover {
+    background: #1d4ed8;
 }
 footer {
-    background: #0f172a;
-    color: white;
+    background: #020617;
+    color: #94a3b8;
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid #1e293b;
 }
 </style>
 </head>
@@ -88,56 +184,80 @@ footer {
 
 <header>
     <h1>Eric’s Pest Control</h1>
-    <p>Fast • Reliable • Affordable Pest Solutions</p>
+    <p>Fast • Reliable • Professional Defense Shield</p>
     
-    <!-- CENTERED BUTTON CONTAINER -->
-    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; max-width: 600px;">
+    <div class="btn-group">
         <a href="tel:5623043473" class="btn">Call Now</a>
-        <a href="#inspection" class="btn">Free Inspection</a>
-        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn" style="background:#1e3a8a; border:2px solid #22c55e;">Sign Up Online</a>
+        <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
+        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn btn-alt">Sign Up Online</a>
     </div>
 </header>
 
 <section>
-    <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
+    <h2 class="section-title">Our Service Scope</h2>
+    <p class="section-subtitle">Serving Homeowners & Commercial Spaces in Whittier, La Habra, & Long Beach</p>
+    
     <div class="services">
-        <!-- LINKED SUBSCRIPTION CARD -->
-        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <!-- GENERAL PEST SUBSCRIPTION CARD -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #22c55e;">
             <div>
                 <h3>General Pest Control</h3>
-                <p>Ants, spiders, roaches, earwigs & more.</p>
-                <p style="font-weight: bold; margin-top: 10px; color: #1e3a8a;">Most Popular Plan</p>
+                <p>Complete perimeter shield targeting ants, spiders, roaches, earwigs, crickets, and seasonal crawling invaders.</p>
+                <div style="margin-top: 15px; display: inline-block; padding: 4px 10px; background: rgba(34, 197, 94, 0.1); color: #16a34a; font-weight: bold; font-size: 0.8rem; border-radius: 20px;">
+                    ★ Most Popular Subscription Plan
+                </div>
             </div>
-            <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" style="display: block; text-align: center; margin-top: 15px; padding: 8px; background: #22c55e; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9rem;">Subscribe Online</a>
+            <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" style="display: block; text-align: center; margin-top: 25px; padding: 10px; background: #22c55e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">Subscribe & Protect</a>
         </div>
+        
         <div class="card">
             <h3>Rodent Control</h3>
-            <p>Rats, mice, trapping & exclusion services.</p>
+            <p>Comprehensive trapping, systematic monitoring, and structural exclusion work to block rats and mice from entering your property completely.</p>
         </div>
         <div class="card">
             <h3>Termite Inspections</h3>
-            <p>Protect your home from costly damage.</p>
+            <p>Thorough wood-destroying organism evaluations to detect activity early and protect your structural investments from subterranean damage.</p>
         </div>
         <div class="card">
             <h3>Commercial Service</h3>
-            <p>Hotels, apartments, restaurants & offices.</p>
+            <p>Discreet, fully compliant integrated pest defense for hospitality venues, apartment complexes, restaurants, and corporate office spaces.</p>
+        </div>
+    </div>
+
+    <!-- TRUST BADGES LAYER -->
+    <div class="trust-banner">
+        <div class="trust-item">
+            <h4>Family & Pet Safe</h4>
+            <p>Targeted placements using advanced materials that focus purely on the pests while keeping your household fully safe.</p>
+        </div>
+        <div class="trust-item">
+            <h4>Rapid Local Routing</h4>
+            <p>Based right locally, meaning fast response times for unexpected break-outs and locked-in regular service days.</p>
+        </div>
+        <div class="trust-item">
+            <h4>No Contract Traps</h4>
+            <p>We earn your business month after month. Cancel or pause your automated monthly plan easily at any time.</p>
         </div>
     </div>
 </section>
 
-<section id="inspection">
-    <h2 style="text-align:center; margin-bottom:20px;">Request a Free Inspection</h2>
-    <form action="https://formsubmit.co/ericspest@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-        <input type="email" name="email" placeholder="Email Address">
-        <textarea name="message" rows="5" placeholder="What pest problem are you having?"></textarea>
-        <button type="submit">Submit Request</button>
-    </form>
+<section id="inspection" style="background: #e2e8f0; max-width: 100%; padding: 80px 20px;">
+    <div style="max-width: 1100px; margin: auto;">
+        <h2 class="section-title">Request a Free Inspection</h2>
+        <p class="section-subtitle">Drop your details below and we will reach out to schedule your property walkthrough</p>
+        
+        <form action="https://formsubmit.co/ericspest@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address">
+            <textarea name="message" rows="5" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
+            <button type="submit">Submit Schedule Request</button>
+        </form>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Eric’s Pest Control | Licensed & Insured</p>
+    <p>© 2026 Eric’s Pest Control | Licensed & Insured | Proudly Protecting SoCal Neighborhoods</p>
 </footer>
 
 </body>
