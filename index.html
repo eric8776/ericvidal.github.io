@@ -20,6 +20,9 @@ header {
     color: white;
     text-align: center;
     padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 header h1 {
     font-size: 3rem;
@@ -30,7 +33,6 @@ header p {
 }
 .btn {
     display: inline-block;
-    margin: 10px;
     padding: 12px 25px;
     background: #22c55e;
     color: white;
@@ -87,10 +89,13 @@ footer {
 <header>
     <h1>Eric’s Pest Control</h1>
     <p>Fast • Reliable • Affordable Pest Solutions</p>
-    <a href="tel:5623043473" class="btn">Call Now</a>
-    <a href="#inspection" class="btn">Free Inspection</a>
-    <!-- STRIPE SUBSCRIPTION BUTTON -->
-    <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn" style="background:#1e3a8a; border:2px solid #22c55e;">Sign Up Online</a>
+    
+    <!-- CENTERED BUTTON CONTAINER -->
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 10px; max-width: 600px;">
+        <a href="tel:5623043473" class="btn">Call Now</a>
+        <a href="#inspection" class="btn">Free Inspection</a>
+        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn" style="background:#1e3a8a; border:2px solid #22c55e;">Sign Up Online</a>
+    </div>
 </header>
 
 <section>
