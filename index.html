@@ -291,20 +291,19 @@ footer {
         <h2 class="section-title">Request a Free Inspection</h2>
         <p class="section-subtitle">Drop your details below and we will reach out to schedule your property walkthrough</p>
         
-        <form action="https://formsubmit.co/ericspest@gmail.com" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="email" name="email" placeholder="Email Address">
-            
-            <!-- SEGREGATED ADDRESS FIELDS: Cleaner lead delivery mapping -->
-            <div class="form-row">
-                <input type="text" name="street_address" placeholder="Street Address" required>
-                <input type="text" name="city" placeholder="City" required>
-            </div>
-            
-            <textarea name="message" rows="4" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
-            <button type="submit">Submit Schedule Request</button>
-        </form>
+        <!-- NEW WEB3FORMS CODE -->
+<form action="https://api.web3forms.com/submit" method="POST">
+
+  <!-- 1. Paste your new Access Key in this hidden line -->
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+
+  <!-- 2. Keep your existing inputs exactly as they are -->
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
     </div>
 </section>
 
