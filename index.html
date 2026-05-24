@@ -53,6 +53,8 @@ header p {
     font-weight: bold;
     transition: all 0.2s ease;
     box-shadow: 0 4px 6px -1px rgba(34, 197, 94, 0.2);
+    cursor: pointer;
+    border: none;
 }
 .btn:hover {
     transform: translateY(-2px);
@@ -131,6 +133,29 @@ section {
     color: #94a3b8;
     font-size: 0.9rem;
 }
+.faq-container {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+}
+details {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    border: 1px solid #e2e8f0;
+}
+summary {
+    font-weight: bold;
+    color: #0f172a;
+    cursor: pointer;
+    outline: none;
+}
+details p {
+    margin-top: 10px;
+    color: #475569;
+    font-size: 0.95rem;
+}
 form {
     display: grid;
     gap: 16px;
@@ -142,6 +167,11 @@ form {
     box-shadow: 0 4px 15px rgba(0,0,0,.04);
     border: 1px solid #e2e8f0;
 }
+.form-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
 input, textarea {
     padding: 14px;
     border: 1px solid #cbd5e1;
@@ -149,6 +179,7 @@ input, textarea {
     background: #f8fafc;
     font-size: 1rem;
     transition: all 0.2s ease;
+    width: 100%;
 }
 input:focus, textarea:focus {
     outline: none;
@@ -187,9 +218,10 @@ footer {
     <p>Fast • Reliable • Professional Defense Shield</p>
     
     <div class="btn-group">
-        <a href="tel:5623043473" class="btn">Call Now</a>
+        <!-- FIXED CELL LINK: Tap-to-call active for smartphones -->
+        <a href="tel:+15623043473" class="btn">Call Now</a>
         <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
-        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn btn-alt">Sign Up Online</a>
+        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn btn-alt">🔒 Sign Up Online</a>
     </div>
 </header>
 
@@ -207,7 +239,7 @@ footer {
                     ★ Most Popular Subscription Plan
                 </div>
             </div>
-            <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" style="display: block; text-align: center; margin-top: 25px; padding: 10px; background: #22c55e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">Subscribe & Protect</a>
+            <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" style="display: block; text-align: center; margin-top: 25px; padding: 10px; background: #22c55e; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 0.9rem; transition: background 0.2s;" onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">🔒 Subscribe & Protect</a>
         </div>
         
         <div class="card">
@@ -239,6 +271,19 @@ footer {
             <p>We earn your business month after month. Cancel or pause your automated monthly plan easily at any time.</p>
         </div>
     </div>
+
+    <!-- QUESTIONS ACCORDION -->
+    <div class="faq-container">
+        <h3 style="text-align: center; margin-bottom: 20px; color: #0f172a;">Frequently Asked Questions</h3>
+        <details>
+            <summary>Is the treatment safe for my pets and kids?</summary>
+            <p>Absolutely. We apply precision perimeter treatments to exterior target zones. Once our low-impact barriers dry completely (typically within 30 minutes), your yard is entirely open and completely safe for children and pets to play on.</p>
+        </details>
+        <details>
+            <summary>What happens if it rains right after a service?</summary>
+            <p>Modern materials are completely water-insoluble once dry, meaning seasonal rain won't wash away your barrier protective shield. If unseasonal downpours break your barrier early, our subscription guarantee covers immediate re-treatment completely free of charge.</p>
+        </details>
+    </div>
 </section>
 
 <section id="inspection" style="background: #e2e8f0; max-width: 100%; padding: 80px 20px;">
@@ -250,7 +295,14 @@ footer {
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="tel" name="phone" placeholder="Phone Number" required>
             <input type="email" name="email" placeholder="Email Address">
-            <textarea name="message" rows="5" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
+            
+            <!-- SEGREGATED ADDRESS FIELDS: Cleaner lead delivery mapping -->
+            <div class="form-row">
+                <input type="text" name="street_address" placeholder="Street Address" required>
+                <input type="text" name="city" placeholder="City" required>
+            </div>
+            
+            <textarea name="message" rows="4" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
             <button type="submit">Submit Schedule Request</button>
         </form>
     </div>
