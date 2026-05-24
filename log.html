@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eric’s Pest Control | Official Pesticide Use Log (3CCR 6624)</title>
+<style>
+/* --- SCREEN DESIGN STYLES (What you see on your phone/computer) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+    background-color: #f8fafc;
+    color: #0f172a;
+    padding: 30px 15px;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+}
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #1e3a8a;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+}
+.header-title h1 {
+    font-size: 1.8rem;
+    color: #1e3a8a;
+}
+.header-title p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin-top: 4px;
+}
+.btn-print {
+    background: #1e3a8a;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+}
+.btn-print:hover { background: #1d4ed8; }
+
+/* Table Configuration */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.85rem;
+}
+th {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    padding: 12px 10px;
+    font-weight: bold;
+    border-bottom: 2px solid #cbd5e1;
+    white-space: nowrap;
+}
+td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    color: #334155;
+}
+tr:hover td { background-color: #f8fafc; }
+
+/* Alert Badge */
+.badge-stamp {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #ef4444;
+    color: white;
+    font-weight: bold;
+    font-size: 0.75rem;
+    border-radius: 4px;
+}
+
+/* --- PRINT DESIGN STYLES (What the Auditor Sees on Paper) --- */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        border: none;
+        padding: 0;
+        max-width: 100%;
+    }
+    .btn-print {
+        display: none !important; /* Hide button on printout */
+    }
+    .header-area {
+        border-bottom: 2px solid black;
+    }
+    .header-title h1 {
+        color: black;
+    }
+    th {
+        background-color: #e2e8f0 !important;
+        color: black;
+        border-bottom: 2px solid black;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    td {
+        border-bottom: 1px solid #94a3b8;
+    }
+    .badge-stamp {
+        border: 1px solid black;
+        color: black;
+        background: none !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-area">
+        <div class="header-title">
+            <h1>Eric’s Pest Control & Defense</h1>
+            <p>Official Pesticide Application Log Ledger • Compliant with 3CCR Section 6624 Recordkeeping</p>
+        </div>
+        <button class="btn-print" onclick="window.print()">🖨️ Print Log for Audit</button>
+    </div>
+
+    <!-- MAIN DATA LOG TABLE -->
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date / Time</th>
+                    <th>Customer Location / Site</th>
+                    <th>Product Name</th>
+                    <th>EPA Reg. No.</th>
+                    <th>Undiluted Vol.</th>
+                    <th>Mix Rate</th>
+                    <th>Target Pest</th>
+                    <th>Applicator</th>
+                    <th>SPCB Stamp Verification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- SAMPLE MASTER RECORD ROW 1 (Keep for data pattern matching) -->
+                <tr>
+                    <td>May 24, 2026<br><small>09:15 AM</small></td>
+                    <td>123 Magnolia Ave,<br>La Habra, CA 90631</td>
+                    <td>Bifen IT</td>
+                    <td>53883-118</td>
+                    <td>1.0 fl oz</td>
+                    <td>0.06% / Gal</td>
+                    <td>Argentine Ants</td>
+                    <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
+                    <td><span class="badge-stamp">Attach Stamp #</span></td>
+                </tr>
+                
+                <!-- SAMPLE MASTER RECORD ROW 2 -->
+                <tr>
+                    <td>May 24, 2026<br><small>11:00 AM</small></td>
+                    <td>456 Whittier Blvd,<br>Whittier, CA 90601</td>
+                    <td>Taurus SC</td>
+                    <td>53883-279</td>
+                    <td>0.8 fl oz</td>
+                    <td>0.06% / Gal</td>
+                    <td>Spiders, Roaches</td>
+                    <td>E. Vasquez<br><small>Lic # OPR12345</small></td>
+                    <td><span class="badge-stamp">Attach Stamp #</span></td>
+                </tr>
+                
+                <!-- NEW DATA ENTRIES GO DIRECTLY ABOVE THIS LINE -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
