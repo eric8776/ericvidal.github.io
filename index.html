@@ -195,6 +195,7 @@ details p {
     margin-bottom: 25px;
 }
 
+/* Form Styles & Layout Adjustments */
 form {
     display: grid;
     gap: 16px;
@@ -240,11 +241,78 @@ form button {
 form button:hover {
     background: #1d4ed8;
 }
+
+/* California Compliance Interactive Modal Window Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(2, 6, 23, 0.7);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+}
+.modal-content {
+    background: #ffffff;
+    max-width: 650px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15);
+    border-top: 5px solid #1e3a8a;
+}
+.modal-close {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #64748b;
+    font-weight: bold;
+}
+.modal-close:hover { color: #0f172a; }
+.legal-text {
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.5;
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+    margin: 15px 0;
+}
+.checkbox-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 10px 0 5px 0;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #475569;
+}
+.checkbox-container input {
+    width: auto;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.disclosure-trigger {
+    color: #3b82f6;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: bold;
+}
+.disclosure-trigger:hover { color: #2563eb; }
+
 footer {
     background: #020617;
     color: #94a3b8;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 20px;
     font-size: 0.9rem;
     border-top: 1px solid #1e293b;
 }
@@ -257,13 +325,8 @@ footer {
     <p>Fast • Reliable • Professional Defense Shield</p>
     
     <div class="btn-group">
-        <!-- 1. EMERGENCY/FAST CHOICE: Phone activation -->
         <a href="tel:+15623043473" class="btn">Call Now</a>
-        
-        <!-- 2. MAXIMUM LEAD GENERATION TOOL: Stands out in bright blue -->
         <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
-        
-        <!-- 3. COMPREHENSIVE CONVERSION BUTTON: Houses both Sign up and Login routing points securely -->
         <a href="#portal" class="btn btn-alt" style="color: white;">🔒 Client Portal / Sign Up</a>
     </div>
 </header>
@@ -349,7 +412,7 @@ footer {
                     <p>Already a subscriber? Access your secure billing portal to print invoices, modify existing info, or update payment methods.</p>
                 </div>
                 <!-- CRUCIAL STEP: Paste your real Stripe Login link directly below inside the href="..." -->
-                <a href="https://billing.stripe.com/p/login/6oUaEXfJD3eK1035C600000" class="btn btn-alt" style="text-align: center; width: 100%; color: white; background: #0f172a; border-color: #1e3a8a;">👤 Log Into Billing Portal</a>
+                <a href="PASTE_YOUR_STRIPE_PORTAL_LINK_HERE" class="btn btn-alt" style="text-align: center; width: 100%; color: white; background: #0f172a; border-color: #1e3a8a;">👤 Log Into Billing Portal</a>
             </div>
         </div>
     </div>
@@ -371,14 +434,65 @@ footer {
             </div>
             
             <textarea name="message" rows="4" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
+            
+            <!-- MANDATORY CALIFORNIA CONSENT CHECKBOX -->
+            <label class="checkbox-container">
+                <input type="checkbox" name="california_disclosure_agreement" value="Accepted" required>
+                <span>I have read and agree to the <span class="disclosure-trigger" onclick="event.preventDefault(); toggleModal(true);">California Pesticide Disclosure Notice</span> regarding proposed active defense products and target application treatments.</span>
+            </label>
+            
             <button type="submit">Submit Schedule Request</button>
         </form>
     </div>
 </section>
 
+<!-- MANDATORY CALIFORNIA PESTICIDE DISCLOSURE INTERACTIVE MODAL -->
+<div id="disclosureModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="modal-close" onclick="toggleModal(false)">&times;</span>
+        <h3 style="color: #0f172a; margin-bottom: 5px; font-size: 1.6rem;">California Pesticide Disclosure Notice</h3>
+        <p style="color: #64748b; font-size: 0.85rem; margin-bottom: 15px;">Pursuant to California Business & Professions Code Section 8538</p>
+        
+        <p style="font-weight: bold; font-size: 0.95rem; color: #0f172a;">NOTICE TO OWNER / OCCUPANT:</p>
+        <div class="legal-text">
+            <strong>CAUTION — PESTICIDES ARE TOXIC CHEMICALS.</strong> Structural Pest Control Companies are licensed and regulated by the Structural Pest Control Board, and can apply pesticides for the control of structural pests or organisms only after registration of the chemicals with the Department of Pesticide Regulation.<br><br>
+            Registration is granted when the Department finds that the chemical will control the pest and will not cause unreasonable adverse effects to humans or the environment when used in accordance with label directions. The Department of Pesticide Regulation and the Department of Health Services utilize scientists and toxicologists to review data submitted by chemical manufacturers prior to registration.
+        </div>
+
+        <h4 style="color: #0f172a; margin: 15px 0 5px 0; font-size: 1rem;">Common Materials Approved & Proposed for Defense Use:</h4>
+        <ul style="font-size: 0.85rem; color: #475569; padding-left: 20px; margin-bottom: 15px;">
+            <li><strong>Bifenthrin / Deltamethrin:</strong> Target Pests: Ants, Spiders, Roaches, Earwigs, Silverfish, Crickets.</li>
+            <li><strong>Bromadiolone / Diphacinone:</strong> Target Pests: Rodent Control Exclusion & Exterior Structural Safeguards.</li>
+        </ul>
+
+        <h4 style="color: #0f172a; margin-bottom: 5px; font-size: 1rem;">For Further Legal & Medical Health Information Contact:</h4>
+        <p style="font-size: 0.85rem; color: #475569; line-height: 1.4;">
+            • <strong>Eric’s Pest Control:</strong> (562) 304-3473<br>
+            • <strong>Structural Pest Control Board:</strong> (916) 561-8708<br>
+            • <strong>Los Angeles County Health Dept:</strong> (213) 240-8117<br>
+            • <strong>State Poison Control Center:</strong> (800) 222-1222
+        </p>
+    </div>
+</div>
+
 <footer>
     <p>© 2026 Eric’s Pest Control | Licensed & Insured | Proudly Protecting SoCal Neighborhoods</p>
+    <p style="margin-top: 10px; font-size: 0.8rem; color: #64748b;">
+        Legal Compliance: <span class="disclosure-trigger" style="color: #94a3b8;" onclick="toggleModal(true)">California Pesticide Disclosure Notice (Sec. 8538)</span>
+    </p>
 </footer>
+
+<!-- LIGHTWEIGHT WINDOW MODAL MANAGER SCRIPT -->
+<script>
+function toggleModal(show) {
+    const modal = document.getElementById('disclosureModal');
+    modal.style.display = show ? 'flex' : 'none';
+}
+window.onclick = function(event) {
+    const modal = document.getElementById('disclosureModal');
+    if (event.target == modal) { modal.style.display = 'none'; }
+}
+</script>
 
 </body>
 </html>
