@@ -218,7 +218,6 @@ footer {
     <p>Fast • Reliable • Professional Defense Shield</p>
     
     <div class="btn-group">
-        <!-- FIXED CELL LINK: Tap-to-call active for smartphones -->
         <a href="tel:+15623043473" class="btn">Call Now</a>
         <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
         <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn btn-alt">🔒 Sign Up Online</a>
@@ -230,7 +229,6 @@ footer {
     <p class="section-subtitle">Serving Homeowners & Commercial Spaces in Whittier, La Habra, & Long Beach</p>
     
     <div class="services">
-        <!-- GENERAL PEST SUBSCRIPTION CARD -->
         <div class="card" style="display: flex; flex-direction: column; justify-content: space-between; border-left: 4px solid #22c55e;">
             <div>
                 <h3>General Pest Control</h3>
@@ -256,7 +254,6 @@ footer {
         </div>
     </div>
 
-    <!-- TRUST BADGES LAYER -->
     <div class="trust-banner">
         <div class="trust-item">
             <h4>Family & Pet Safe</h4>
@@ -272,7 +269,6 @@ footer {
         </div>
     </div>
 
-    <!-- QUESTIONS ACCORDION -->
     <div class="faq-container">
         <h3 style="text-align: center; margin-bottom: 20px; color: #0f172a;">Frequently Asked Questions</h3>
         <details>
@@ -291,19 +287,24 @@ footer {
         <h2 class="section-title">Request a Free Inspection</h2>
         <p class="section-subtitle">Drop your details below and we will reach out to schedule your property walkthrough</p>
         
-        <!-- NEW WEB3FORMS CODE -->
-<form action="https://api.web3forms.com/submit" method="POST">
-
-  <!-- 1. Paste your new Access Key in this hidden line -->
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-
-  <!-- 2. Keep your existing inputs exactly as they are -->
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-
-  <button type="submit">Send</button>
-</form>
+        <!-- FIXED FORM ROUTING: Now uses Web3Forms API -->
+        <form action="https://api.web3forms.com/submit" method="POST">
+            
+            <!-- Enter your unique Web3Forms Access Key on the line below -->
+            <input type="hidden" name="access_key" value="PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE">
+            
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="email" name="email" placeholder="Email Address">
+            
+            <div class="form-row">
+                <input type="text" name="street_address" placeholder="Street Address" required>
+                <input type="text" name="city" placeholder="City" required>
+            </div>
+            
+            <textarea name="message" rows="4" placeholder="What kind of pest patterns or issues are you seeing?" required></textarea>
+            <button type="submit">Submit Schedule Request</button>
+        </form>
     </div>
 </section>
 
