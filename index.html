@@ -156,6 +156,41 @@ details p {
     color: #475569;
     font-size: 0.95rem;
 }
+
+/* Account Hub Layout Styles */
+.portal-section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 50px 30px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 15px rgba(0,0,0,.04);
+}
+.portal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.portal-box {
+    padding: 25px;
+    border-radius: 8px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.portal-box h3 {
+    color: #0f172a;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.portal-box p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
 form {
     display: grid;
     gap: 16px;
@@ -220,7 +255,8 @@ footer {
     <div class="btn-group">
         <a href="tel:+15623043473" class="btn">Call Now</a>
         <a href="#inspection" class="btn" style="background: #3b82f6; box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);">Free Inspection</a>
-        <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn btn-alt">🔒 Sign Up Online</a>
+        <!-- UPDATED HEADER BUTTON: Direct anchor drop to the Client Hub section -->
+        <a href="#portal" class="btn btn-alt">🔒 Client Account Hub</a>
     </div>
 </header>
 
@@ -282,17 +318,41 @@ footer {
     </div>
 </section>
 
+<!-- NEW SECTION: Dedicated Client Account Hub Placement -->
+<section id="portal" style="padding: 40px 20px; max-width: 1100px; margin: auto;">
+    <div class="portal-section">
+        <h2 class="section-title" style="text-align: left; font-size: 2rem;">Client Account Hub</h2>
+        <p style="color: #64748b; margin-bottom: 20px;">Manage your premium pest defense plans, payments, and scheduling details.</p>
+        
+        <div class="portal-grid">
+            <!-- New Customer Segment -->
+            <div class="portal-box" style="border-left: 4px solid #22c55e;">
+                <div>
+                    <h3>New Customer Setup</h3>
+                    <p>Ready to lock in a professional defense shield perimeter plan? Securely initialize your automatic billing setup online.</p>
+                </div>
+                <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn" style="text-align: center; width: 100%;">🔒 Start New Subscription Plan</a>
+            </div>
+
+            <!-- Existing Customer Segment -->
+            <div class="portal-box" style="border-left: 4px solid #1e3a8a;">
+                <div>
+                    <h3>Existing Client Login</h3>
+                    <p>Already a subscriber? Access your secure billing portal to print invoices, modify existing info, or update payment methods.</p>
+                </div>
+                <!-- CRUCIAL STEP: Paste your real Stripe Login link directly below inside the href="..." -->
+                <a href="PASTE_YOUR_STRIPE_PORTAL_LINK_HERE" class="btn btn-alt" style="text-align: center; width: 100%; color: white; background: #0f172a;">👤 Log Into Billing Portal</a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="inspection" style="background: #e2e8f0; max-width: 100%; padding: 80px 20px;">
     <div style="max-width: 1100px; margin: auto;">
         <h2 class="section-title">Request a Free Inspection</h2>
         <p class="section-subtitle">Drop your details below and we will reach out to schedule your property walkthrough</p>
         
-        <!-- FIXED FORM ROUTING: Now uses Web3Forms API -->
-        <form action="https://api.web3forms.com/submit" method="POST">
-            
-            <!-- Enter your unique Web3Forms Access Key on the line below -->
-            <input type="hidden" name="access_key" value="3f429bf7-8bd4-45c2-99d8-8770088a21a1">
-            
+        <form action="https://api.web3forms.com/submit/3f429bf7-8bd4-45c2-99d8-8770088a21a1" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="tel" name="phone" placeholder="Phone Number" required>
             <input type="email" name="email" placeholder="Email Address">
