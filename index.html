@@ -36,6 +36,7 @@ header p {
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
 }
 section {
     padding: 60px 20px;
@@ -71,6 +72,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
 }
 footer {
     background: #0f172a;
@@ -87,14 +89,21 @@ footer {
     <p>Fast • Reliable • Affordable Pest Solutions</p>
     <a href="tel:5623043473" class="btn">Call Now</a>
     <a href="#inspection" class="btn">Free Inspection</a>
+    <!-- STRIPE SUBSCRIPTION BUTTON -->
+    <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" class="btn" style="background:#1e3a8a; border:2px solid #22c55e;">Sign Up Online</a>
 </header>
 
 <section>
     <h2 style="text-align:center; margin-bottom:30px;">Our Services</h2>
     <div class="services">
-        <div class="card">
-            <h3>General Pest Control</h3>
-            <p>Ants, spiders, roaches, earwigs & more.</p>
+        <!-- LINKED SUBSCRIPTION CARD -->
+        <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+                <h3>General Pest Control</h3>
+                <p>Ants, spiders, roaches, earwigs & more.</p>
+                <p style="font-weight: bold; margin-top: 10px; color: #1e3a8a;">Most Popular Plan</p>
+            </div>
+            <a href="https://buy.stripe.com/6oUaEXfJD3eK1035C600000" style="display: block; text-align: center; margin-top: 15px; padding: 8px; background: #22c55e; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9rem;">Subscribe Online</a>
         </div>
         <div class="card">
             <h3>Rodent Control</h3>
