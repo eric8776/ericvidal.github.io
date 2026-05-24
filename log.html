@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Eric’s Pest Control | Official Pesticide Use Log (3CCR 6624)</title>
+
+<!-- IPHONE HOME SCREEN SHORTCUT ICON -->
+<link rel="apple-touch-icon" href="https://img.icons8.com/fluent/180/000000/map-marker.png">
+
 <style>
 /* --- SCREEN DESIGN STYLES (What you see on your phone/computer) --- */
 * {
@@ -33,15 +37,6 @@ body {
     border-bottom: 3px solid #1e3a8a;
     padding-bottom: 20px;
     margin-bottom: 25px;
-}
-.header-title h1 {
-    font-size: 1.8rem;
-    color: #1e3a8a;
-}
-.header-title p {
-    color: #64748b;
-    font-size: 0.9rem;
-    margin-top: 4px;
 }
 .btn-print {
     background: #1e3a8a;
@@ -114,9 +109,6 @@ tr:hover td { background-color: #f8fafc; }
     .header-area {
         border-bottom: 2px solid black;
     }
-    .header-title h1 {
-        color: black;
-    }
     th {
         background-color: #e2e8f0 !important;
         color: black;
@@ -139,10 +131,22 @@ tr:hover td { background-color: #f8fafc; }
 
 <div class="container">
     <div class="header-area">
-        <div class="header-title">
-            <h1>Eric’s Pest Control & Defense</h1>
-            <p>Official Pesticide Application Log Ledger • Compliant with 3CCR Section 6624 Recordkeeping</p>
+        <!-- BRANDED LOGO HEADER COUPLING -->
+        <div style="display: flex; align-items: center; gap: 14px;">
+            <!-- Brand Logo Shield -->
+            <div style="background: #22c55e; width: 46px; height: 46px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+                🛡️
+            </div>
+            <div>
+                <h1 style="font-size: 1.5rem; font-weight: 800; color: #1e3a8a; letter-spacing: -0.5px; margin: 0; line-height: 1.2;">
+                    ERIC'S PEST CONTROL & DEFENSE
+                </h1>
+                <p style="color: #64748b; font-size: 0.85rem; margin-top: 2px; font-weight: bold;">
+                    Official Pesticide Application Log Ledger • Compliant with 3CCR Section 6624
+                </p>
+            </div>
         </div>
+        
         <button class="btn-print" onclick="window.print()">🖨️ Print Log for Audit</button>
     </div>
 
@@ -163,7 +167,7 @@ tr:hover td { background-color: #f8fafc; }
                 </tr>
             </thead>
             <tbody>
-                <!-- SAMPLE MASTER RECORD ROW 1 (Keep for data pattern matching) -->
+                <!-- SAMPLE MASTER RECORD ROW 1 -->
                 <tr>
                     <td>May 24, 2026<br><small>09:15 AM</small></td>
                     <td>123 Magnolia Ave,<br>La Habra, CA 90631</td>
