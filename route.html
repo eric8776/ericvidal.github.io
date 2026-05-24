@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eric’s Route Tracker</title>
+<title>Eric’s Weekly Route</title>
 
-<!-- THIS IS THE ICON LINE FOR YOUR IPHONE -->
-<link rel="apple-touch-icon" href="https://img.icons8.com/fluent/180/000000/map-marker.png">
+<!-- IPHONE HOME SCREEN ICON -->
+<link class="apple-touch-icon" rel="apple-touch-icon" href="https://img.icons8.com/fluent/180/000000/map-marker.png">
 
 <style>
 * {
@@ -25,7 +25,7 @@ body {
     color: white;
     padding: 20px 15px;
     border-radius: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
 }
 .header h1 {
@@ -36,6 +36,21 @@ body {
     font-size: 0.85rem;
     opacity: 0.9;
     margin-top: 4px;
+}
+.day-section {
+    margin-bottom: 25px;
+}
+.day-header {
+    background: #334155;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 .route-list {
     display: flex;
@@ -117,40 +132,49 @@ body {
 <body>
 
 <div class="header">
-    <h1>Today’s Route Dashboard</h1>
-    <p>Tap any green button to open turn-by-turn GPS navigation</p>
+    <h1>Eric’s Weekly Master Route</h1>
+    <p>Scroll to today's day and tap any green button to navigate</p>
 </div>
 
-<div class="route-list">
-
-    <!-- STOP 1 -->
-    <div class="job-card">
-        <div class="stop-number">1</div>
-        <div class="time-slot">08:00 AM - 09:30 AM</div>
-        <div class="customer-name">John Doe (Residential Bi-Monthly)</div>
-        <div class="service-type">Perimeter Spray + De-webbing</div>
-        <div class="address-text">
-            123 Magnolia Ave,<br>La Habra, CA 90631
+<!-- ================= MONDAY ROUTE ================= -->
+<div class="day-section">
+    <div class="day-header">Monday Route</div>
+    <div class="route-list">
+        <div class="job-card">
+            <div class="stop-number">1</div>
+            <div class="time-slot">08:00 AM</div>
+            <div class="customer-name">John Doe (Residential)</div>
+            <div class="service-type">Perimeter Spray + De-webbing</div>
+            <div class="address-text">123 Magnolia Ave, La Habra, CA 90631</div>
+            <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=123+Magnolia+Ave+La+Habra+CA+90631" target="_blank">📍 Navigate to Stop 1</a>
         </div>
-        <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=123+Magnolia+Ave+La+Habra+CA+90631" target="_blank">
-            📍 Open GPS Navigation
-        </a>
     </div>
+</div>
 
-    <!-- STOP 2 -->
-    <div class="job-card">
-        <div class="stop-number">2</div>
-        <div class="time-slot">10:00 AM - 11:30 AM</div>
-        <div class="customer-name">Whittier Plaza (Commercial)</div>
-        <div class="service-type">Exterior Bait Station Service</div>
-        <div class="address-text">
-            456 Whittier Blvd,<br>Whittier, CA 90601
+<!-- ================= TUESDAY ROUTE ================= -->
+<div class="day-section">
+    <div class="day-header">Tuesday Route</div>
+    <div class="route-list">
+        <div class="job-card">
+            <div class="stop-number">1</div>
+            <div class="time-slot">10:00 AM</div>
+            <div class="customer-name">Whittier Plaza (Commercial)</div>
+            <div class="service-type">Exterior Bait Station Service</div>
+            <div class="address-text">456 Whittier Blvd, Whittier, CA 90601</div>
+            <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=456+Whittier+Blvd+Whittier+CA+90601" target="_blank">📍 Navigate to Stop 1</a>
         </div>
-        <a class="btn-nav" href="https://www.google.com/maps/search/?api=1&query=456+Whittier+Blvd+Whittier+CA+90601" target="_blank">
-            📍 Open GPS Navigation
-        </a>
     </div>
+</div>
 
+<!-- ================= WEDNESDAY ROUTE ================= -->
+<div class="day-section">
+    <div class="day-header">Wednesday Route</div>
+    <div class="route-list">
+        <!-- Add cards here following the layout above -->
+        <div style="background: #e2e8f0; color: #475569; padding: 15px; border-radius: 8px; font-size: 0.9rem; text-align: center; font-style: italic;">
+            No stops loaded yet for Wednesday. Tap edit in GitHub to add them!
+        </div>
+    </div>
 </div>
 
 </body>
